@@ -21,9 +21,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 .container {
   max-width: 1920px;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 </style>
