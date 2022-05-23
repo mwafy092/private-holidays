@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <NavBar />
-    <header>header</header>
+    <HeaderSection />
     <section>See latest vacation ideas</section>
     <section>Recent holiday locations</section>
     <section>Why we are different</section>
@@ -12,11 +12,13 @@
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import HeaderSection from "./components/HeaderSection.vue";
 
 export default {
   name: "App",
   components: {
     NavBar,
+    HeaderSection,
   },
 };
 </script>
