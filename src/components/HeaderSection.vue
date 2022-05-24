@@ -2,31 +2,33 @@
   <header>
     <img src="../assets/header@2x.png" alt="header image" />
     <p>ENJOY FREEDOM LAND</p>
-    <form>
+    <div class="form-container">
       <DropDownSelect
         :selectOptions="['Istanbul', 'Antalya', 'Konya']"
       ></DropDownSelect>
+
+      <DatePicker></DatePicker>
       <DropDownSelect
         :selectOptions="['2 BedRooms', '3 BedRooms', '5 BedRooms']"
       ></DropDownSelect>
-      <v-calendar />
-      <v-date-picker v-model="date" />
-    </form>
+      <button><img src="../assets/redarrow.png" style="width: 30px" /></button>
+    </div>
   </header>
 </template>
 
 <script>
 import DropDownSelect from "./DropDownSelect.vue";
-
+import DatePicker from "./DatePicker.vue";
 export default {
   name: "HeaderSection",
   components: {
     DropDownSelect,
+    DatePicker,
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 header {
   width: 100%;
   position: relative;
@@ -45,10 +47,12 @@ header {
     margin: 0;
     white-space: nowrap;
   }
-  form {
+  .form-container {
     background-color: #fff;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 10px;
     height: 100px;
     width: 85vw;
@@ -60,7 +64,11 @@ header {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     div {
-      width: 200px;
+      width: 150px;
+    }
+    button {
+      background-color: transparent;
+      border: none;
     }
   }
 }
