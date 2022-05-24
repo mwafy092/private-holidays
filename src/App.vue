@@ -5,7 +5,7 @@
     <section>See latest vacation ideas</section>
     <section>Recent holiday locations</section>
     <section>Why we are different</section>
-    <section>Contact us</section>
+    <ContactUs />
     <FooterSection />
   </div>
 </template>
@@ -14,6 +14,7 @@
 import NavBar from "./components/NavBar.vue";
 import HeaderSection from "./components/HeaderSection.vue";
 import FooterSection from "./components/FooterSection.vue";
+import ContactUs from "./components/ContactUs.vue";
 
 export default {
   name: "App",
@@ -21,6 +22,7 @@ export default {
     NavBar,
     HeaderSection,
     FooterSection,
+    ContactUs,
   },
 };
 </script>
