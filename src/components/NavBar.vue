@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Pirate Holiday</a>
+      <a class="navbar-brand" href="#"
+        ><img src="../assets/logo.svg" alt="logo" class="logo"
+      /></a>
 
       <button
         class="navbar-toggler"
@@ -40,5 +42,16 @@ export default {
 <style lang="scss">
 nav {
   background: #fff;
+  .logo {
+    width: 220px;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+}
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 </style>

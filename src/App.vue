@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="main">
     <NavBar />
     <HeaderSection />
     <section>See latest vacation ideas</section>
@@ -25,9 +25,11 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-.container {
+.main {
+  width: 100%;
   max-width: 1920px;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  margin: auto;
 }
 </style>
