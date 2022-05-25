@@ -15,6 +15,7 @@
       ></DropDownSelect>
       <button @click="showFormData">
         <img src="../assets/redarrow.png" style="width: 30px" />
+        <span>{{ formError }}</span>
       </button>
     </div>
   </header>
@@ -35,6 +36,7 @@ export default {
       bedrooms: "",
       startDate: "",
       endDate: "",
+      formError: "",
     };
   },
   methods: {
@@ -49,12 +51,16 @@ export default {
       this.endDate = new Date(dates.endDate).toDateString();
     },
     showFormData() {
-      console.log({
-        location: this.location,
-        bedrooms: this.bedrooms,
-        startDate: this.startDate,
-        endDate: this.endDate,
-      });
+      if (this.location && this.bedrooms && this.startDate && this.endDate) {
+        console.log({
+          location: this.location,
+          bedrooms: this.bedrooms,
+          startDate: this.startDate,
+          endDate: this.endDate,
+        });
+      } else {
+        this.formError = "Empty fields";
+      }
     },
   },
 };
@@ -102,6 +108,13 @@ header {
     button {
       background-color: transparent;
       border: none;
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 10px;
+        color: red;
+        font-size: 13px;
+      }
     }
   }
 }
