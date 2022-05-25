@@ -2,7 +2,7 @@
   <div class="main">
     <NavBar />
     <HeaderSection />
-    <section>See latest vacation ideas</section>
+    <LatestVacation />
     <section>Recent holiday locations</section>
     <section>Why we are different</section>
     <ContactUs />
@@ -15,6 +15,7 @@ import NavBar from "./components/NavBar.vue";
 import HeaderSection from "./components/HeaderSection.vue";
 import FooterSection from "./components/FooterSection.vue";
 import ContactUs from "./components/ContactUs.vue";
+import LatestVacation from "./components/LatestVacation.vue";
 
 export default {
   name: "App",
@@ -23,6 +24,7 @@ export default {
     HeaderSection,
     FooterSection,
     ContactUs,
+    LatestVacation,
   },
 };
 </script>
@@ -37,5 +39,6 @@ export default {
   font-family: "Montserrat", sans-serif;
   margin: auto;
   position: relative;
+  background-color: #ddd;
 }
 </style>
