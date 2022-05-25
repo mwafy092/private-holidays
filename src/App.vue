@@ -3,7 +3,7 @@
     <NavBar />
     <HeaderSection />
     <LatestVacation />
-    <section>Recent holiday locations</section>
+    <RecentHoliday />
     <section>Why we are different</section>
     <ContactUs />
     <FooterSection />
@@ -16,6 +16,7 @@ import HeaderSection from "./components/HeaderSection.vue";
 import FooterSection from "./components/FooterSection.vue";
 import ContactUs from "./components/ContactUs.vue";
 import LatestVacation from "./components/LatestVacation.vue";
+import RecentHoliday from "./components/RecentHoliday.vue";
 
 export default {
   name: "App",
@@ -25,6 +26,7 @@ export default {
     FooterSection,
     ContactUs,
     LatestVacation,
+    RecentHoliday,
   },
 };
 </script>

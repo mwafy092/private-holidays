@@ -1,0 +1,213 @@
+<template>
+  <section>
+    <h1>Recent holiday locations</h1>
+    <div class="swiper-container">
+      <swiper
+        :slidesPerView="2"
+        :spaceBetween="30"
+        :keyboard="{
+          enabled: true,
+        }"
+        :pagination="{
+          clickable: true,
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide v-for="item in 4" :key="item">
+          <div class="slide-card">
+            <div class="slide-images">
+              <img src="../assets/vacation3.png" />
+              <div class="slide-images-thumps">
+                <img src="../assets/holiday1a.png" />
+                <img src="../assets/holiday1b.png" />
+                <img src="../assets/holiday1c.png" />
+              </div>
+            </div>
+            <div class="slide-content">
+              <h2>Montage Kapalua</h2>
+              <p>
+                Located only a jaunt from Kahului airport, you’ll be greeted by
+                an easy and scenic drive along the West Maui Mountains and
+                crystal blue waters of the Pacific Ocean.
+              </p>
+              <div class="slide-content-features">
+                <img src="../assets/bed.png" alt="bed " />
+                <img src="../assets/bath.png" alt="pool" />
+                <img src="../assets/beachfront.png" alt="beachfront" />
+                <img src="../assets/pool.png" alt="pool" />
+              </div>
+              <button>BOOK NOW</button>
+            </div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-images">
+              <img src="../assets/vacation3.png" />
+              <div class="slide-images-thumps">
+                <img src="../assets/holiday1a.png" />
+                <img src="../assets/holiday1b.png" />
+                <img src="../assets/holiday1c.png" />
+              </div>
+            </div>
+            <div class="slide-content">
+              <h2>Montage Kapalua</h2>
+              <p>
+                Located only a jaunt from Kahului airport, you’ll be greeted by
+                an easy and scenic drive along the West Maui Mountains and
+                crystal blue waters of the Pacific Ocean.
+              </p>
+              <div class="slide-content-features">
+                <img src="../assets/bed.png" alt="bed " />
+                <img src="../assets/bath.png" alt="pool" />
+                <img src="../assets/beachfront.png" alt="beachfront" />
+                <img src="../assets/pool.png" alt="pool" />
+              </div>
+              <button>BOOK NOW</button>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
+  </section>
+</template>
+
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Keyboard, Pagination, Navigation } from "swiper";
+
+export default {
+  name: "RecentHoliday",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Keyboard, Pagination, Navigation],
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+section {
+  //   height: 400px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0;
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .swiper-container {
+    width: 70%;
+  }
+}
+.swiper {
+  width: 100%;
+  height: fit-content;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slide-tag {
+  position: absolute;
+  font-size: 13px;
+  background-color: #fff;
+  padding: 16px 0;
+  margin: 0;
+  bottom: 10px;
+  width: 170px;
+}
+
+.slide-card {
+  width: 600px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  margin-bottom: 10px;
+  .slide-images {
+    display: grid;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .slide-images-thumps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .slide-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 13px;
+      text-align: left;
+    }
+    .slide-content-features {
+      display: flex;
+      justify-content: space-around;
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+    button {
+      border: none;
+      background-color: red;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      margin-top: 20px;
+    }
+  }
+}
+</style>
