@@ -15,7 +15,7 @@
         :modules="modules"
         class="mySwiper"
       >
-        <swiper-slide v-for="item in 4" :key="item">
+        <swiper-slide v-for="item in 5" :key="item">
           <div class="slide-card">
             <div class="slide-images">
               <img src="../assets/vacation3.png" />

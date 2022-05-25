@@ -4,7 +4,7 @@
     <HeaderSection />
     <LatestVacation />
     <RecentHoliday />
-    <section>Why we are different</section>
+    <FeaturesSection />
     <ContactUs />
     <FooterSection />
   </div>
@@ -17,6 +17,7 @@ import FooterSection from "./components/FooterSection.vue";
 import ContactUs from "./components/ContactUs.vue";
 import LatestVacation from "./components/LatestVacation.vue";
 import RecentHoliday from "./components/RecentHoliday.vue";
+import FeaturesSection from "./components/FeaturesSection.vue";
 
 export default {
   name: "App",
@@ -27,6 +28,7 @@ export default {
     ContactUs,
     LatestVacation,
     RecentHoliday,
+    FeaturesSection,
   },
 };
 </script>
@@ -41,6 +43,6 @@ export default {
   font-family: "Montserrat", sans-serif;
   margin: auto;
   position: relative;
-  background-color: #ddd;
+  background-color: #eee;
 }
 </style>
