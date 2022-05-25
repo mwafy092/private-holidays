@@ -5,13 +5,17 @@
     <div class="form-container">
       <DropDownSelect
         :selectOptions="['Istanbul', 'Antalya', 'Konya']"
+        @getLocation="setLocation($event)"
       ></DropDownSelect>
 
-      <DatePicker></DatePicker>
+      <DatePicker @getDate="setDate($event, $event)"></DatePicker>
       <DropDownSelect
         :selectOptions="['2 BedRooms', '3 BedRooms', '5 BedRooms']"
+        @getBedrooms="setBedrooms($event)"
       ></DropDownSelect>
-      <button><img src="../assets/redarrow.png" style="width: 30px" /></button>
+      <button @click="showFormData">
+        <img src="../assets/redarrow.png" style="width: 30px" />
+      </button>
     </div>
   </header>
 </template>
@@ -24,6 +28,34 @@ export default {
   components: {
     DropDownSelect,
     DatePicker,
+  },
+  data() {
+    return {
+      location: "",
+      bedrooms: "",
+      startDate: "",
+      endDate: "",
+    };
+  },
+  methods: {
+    setLocation(location) {
+      this.location = location;
+    },
+    setBedrooms(bedrooms) {
+      this.bedrooms = bedrooms;
+    },
+    setDate(dates) {
+      this.startDate = new Date(dates.startDate).toDateString();
+      this.endDate = new Date(dates.endDate).toDateString();
+    },
+    showFormData() {
+      console.log({
+        location: this.location,
+        bedrooms: this.bedrooms,
+        startDate: this.startDate,
+        endDate: this.endDate,
+      });
+    },
   },
 };
 </script>

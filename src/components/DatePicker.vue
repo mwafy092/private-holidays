@@ -1,7 +1,13 @@
 <template>
   <form class="bg-white shadow-md rounded" @submit.prevent>
     <div>
-      <v-date-picker v-model="range" mode="dateTime" :masks="masks" is-range>
+      <v-date-picker
+        v-model="range"
+        mode="dateTime"
+        :masks="masks"
+        is-range
+        @click="passEvent"
+      >
         <template v-slot="{ inputValue, inputEvents, isDragging }">
           <div
             class="flex flex-col sm:flex-row justify-start items-center date-container"
@@ -81,6 +87,14 @@ export default {
         input: "YYYY-MM-DD h:mm A",
       },
     };
+  },
+  methods: {
+    passEvent() {
+      this.$emit("getDate", {
+        startDate: this.range.start,
+        endDate: this.range.end,
+      });
+    },
   },
 };
 </script>

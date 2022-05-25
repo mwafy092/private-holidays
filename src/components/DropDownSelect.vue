@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Multiselect v-model="value" :options="selectOptions" />
+    <Multiselect v-model="value" :options="selectOptions" @click="passEvent" />
   </div>
 </template>
 
@@ -19,6 +19,12 @@ export default {
     return {
       value: null,
     };
+  },
+  methods: {
+    passEvent() {
+      this.$emit("getLocation", this.value);
+      this.$emit("getBedrooms", this.value);
+    },
   },
 };
 </script>
