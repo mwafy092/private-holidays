@@ -207,6 +207,7 @@ section {
     img {
       height: 100%;
       object-fit: cover;
+      max-height: 200px;
     }
     .slide-images-thumps {
       display: grid;
