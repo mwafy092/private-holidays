@@ -96,9 +96,10 @@ export default {
     width: 20px;
   }
   input {
-    width: 150px;
-    font-size: 15px;
-    padding: 0 20px;
+    width: 200px;
+    font-size: 13px;
+    padding: 5px 20px;
+    height: 40px;
   }
 }
 </style>

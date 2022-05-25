@@ -52,7 +52,7 @@ header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     padding: 10px;
     height: 100px;
     width: 85vw;
@@ -64,7 +64,8 @@ header {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     div {
-      width: 150px;
+      width: 200px;
+      margin: 0 10px;
     }
     button {
       background-color: transparent;
