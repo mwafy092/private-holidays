@@ -7,12 +7,13 @@
         :selectOptions="['Istanbul', 'Antalya', 'Konya']"
         @getLocation="setLocation($event)"
       ></DropDownSelect>
-
-      <DatePicker @getDate="setDate($event, $event)"></DatePicker>
       <DropDownSelect
         :selectOptions="['2 BedRooms', '3 BedRooms', '5 BedRooms']"
         @getBedrooms="setBedrooms($event)"
       ></DropDownSelect>
+
+      <DatePicker @getDate="setDate($event, $event)"></DatePicker>
+
       <button @click="showFormData">
         <img src="../assets/redarrow.png" style="width: 30px" />
         <span>{{ formError }}</span>
@@ -89,7 +90,6 @@ header {
     background-color: #fff;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
     height: 100px;
@@ -115,6 +115,37 @@ header {
         color: red;
         font-size: 13px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    p {
+      top: 30%;
+    }
+    .form-container {
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      width: 100vw;
+      position: relative;
+      padding: 20px;
+      div {
+        margin-bottom: 24px;
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    p {
+      font-size: 28px;
     }
   }
 }

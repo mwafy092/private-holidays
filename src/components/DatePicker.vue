@@ -116,4 +116,13 @@ export default {
     height: 40px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .date-container {
+    flex-direction: column;
+    .date-item {
+      margin-left: -36px;
+    }
+  }
+}
 </style>
