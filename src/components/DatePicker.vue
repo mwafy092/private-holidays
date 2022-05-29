@@ -3,11 +3,17 @@
     class="inline-block h-full date-item"
     v-model="startDate"
     :max-date="endDate"
+    :class="[errorValidation.required && errorValidation.start ? 'error' : '']"
   >
     <template v-slot="{ inputValue, togglePopover }">
       <div class="flex items-center">
-        <span @click="togglePopover()">
-          <img src="../assets/date.png" alt="dropdown" class="date-icon" />
+        <span>
+          <img
+            src="../assets/date.png"
+            alt="dropdown"
+            class="date-icon"
+            @click="togglePopover()"
+          />
         </span>
         <input
           :value="inputValue"
@@ -21,6 +27,7 @@
     class="inline-block h-full date-item"
     v-model="endDate"
     :min-date="startDate"
+    :class="[errorValidation.required && errorValidation.end ? 'error' : '']"
   >
     <template v-slot="{ inputValue, togglePopover }">
       <div class="flex items-center">
@@ -46,19 +53,20 @@ export default {
       endDate: new Date().toDateString(),
     };
   },
+  props: {
+    errorValidation: Object,
+  },
   watch: {
     startDate: function (date) {
-      console.log(date);
+      this.$emit("getDate", {
+        startDate: date,
+        endDate: this.endDate,
+      });
     },
     endDate: function (date) {
-      console.log(date);
-    },
-  },
-  methods: {
-    passEvent() {
       this.$emit("getDate", {
-        startDate: this.range.start,
-        endDate: this.range.end,
+        startDate: this.startDate,
+        endDate: date,
       });
     },
   },
@@ -95,6 +103,12 @@ export default {
 }
 .date-icon {
   width: 15px;
+}
+.error {
+  border: 1px solid red;
+  border-radius: 5px;
+  width: 202px;
+  display: flex;
 }
 @media screen and (max-width: 1200px) {
   .date-item {

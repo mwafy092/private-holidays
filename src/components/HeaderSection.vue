@@ -23,7 +23,14 @@
             : '',
         ]"
       ></DropDownSelect>
-      <DatePicker @getDate="setDate($event, $event)"></DatePicker>
+      <DatePicker
+        @getDate="setDate($event, $event)"
+        :errorValidation="{
+          required: showRequired,
+          start: v$.startDate.required.$invalid,
+          end: v$.endDate.required.$invalid,
+        }"
+      ></DatePicker>
 
       <button @click="showFormData">
         <img src="../assets/redarrow.png" style="width: 30px" />
@@ -95,6 +102,7 @@ export default {
           startDate: this.startDate,
           endDate: this.endDate,
         });
+        this.formError = "";
       } else {
         this.formError = "Empty fields";
       }
