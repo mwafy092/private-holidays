@@ -14,6 +14,7 @@
         :navigation="true"
         :modules="modules"
         class="mySwiper"
+        :breakpoints="swiperOptions.breakpoints"
       >
         <swiper-slide>
           <img src="../assets/vacation1.png" alt="" />
@@ -59,6 +60,27 @@ export default {
       modules: [Keyboard, Pagination, Navigation],
     };
   },
+  data() {
+    return {
+      swiperOptions: {
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      },
+    };
+  },
 };
 </script>
 
@@ -74,6 +96,7 @@ section {
   h1 {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 50px;
   }
   .swiper-container {
     width: 70%;
