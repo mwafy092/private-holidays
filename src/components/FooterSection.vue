@@ -155,4 +155,23 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  footer {
+    .footer-info {
+      flex-direction: column;
+      div {
+        margin-bottom: 10px;
+      }
+    }
+    .footer-contact {
+      text-align: right;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
