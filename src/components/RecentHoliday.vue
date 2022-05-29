@@ -17,7 +17,7 @@
         :breakpoints="swiperOptions.breakpoints"
       >
         <swiper-slide v-for="(item, index) in 5" :key="index">
-          <div class="slide-card">
+          <div class="slide-card" v-for="(card, index) in 2" :key="card">
             <div class="slide-images">
               <img
                 v-bind:src="`src/assets/` + 'holiday1a.png'"
@@ -47,48 +47,34 @@
                 crystal blue waters of the Pacific Ocean.
               </p>
               <div class="slide-content-features">
-                <img src="../assets/bed.png" alt="bed " />
-                <img src="../assets/bath.png" alt="pool" />
-                <img src="../assets/beachfront.png" alt="beachfront" />
-                <img src="../assets/pool.png" alt="pool" />
-              </div>
-              <button>BOOK NOW</button>
-            </div>
-          </div>
-          <div class="slide-card">
-            <div class="slide-images">
-              <img
-                v-bind:src="`src/assets/` + 'holiday1a.png'"
-                v-if="index !== mainImageId.id"
-              />
-              <img v-bind:src="`src/assets/` + mainImageId.img" v-else />
-              <div class="slide-images-thumps">
                 <img
-                  src="../assets/holiday1a.png"
-                  @click="(e) => setMainImageId(e, index)"
+                  src="../assets/bed.png"
+                  alt="bed "
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="bedroom"
                 />
                 <img
-                  src="../assets/holiday1b.png"
-                  @click="(e) => setMainImageId(e, index)"
+                  src="../assets/bath.png"
+                  alt="pool"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="bathroom"
                 />
                 <img
-                  src="../assets/holiday1c.png"
-                  @click="(e) => setMainImageId(e, index)"
+                  src="../assets/beachfront.png"
+                  alt="beachfront"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="beachfront"
                 />
-              </div>
-            </div>
-            <div class="slide-content">
-              <h2>Montage Kapalua</h2>
-              <p>
-                Located only a jaunt from Kahului airport, you’ll be greeted by
-                an easy and scenic drive along the West Maui Mountains and
-                crystal blue waters of the Pacific Ocean.
-              </p>
-              <div class="slide-content-features">
-                <img src="../assets/bed.png" alt="bed " />
-                <img src="../assets/bath.png" alt="pool" />
-                <img src="../assets/beachfront.png" alt="beachfront" />
-                <img src="../assets/pool.png" alt="pool" />
+                <img
+                  src="../assets/pool.png"
+                  alt="pool"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="pool"
+                />
               </div>
               <button>BOOK NOW</button>
             </div>
