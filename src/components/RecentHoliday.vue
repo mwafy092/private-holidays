@@ -267,14 +267,14 @@ section {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   section {
     .swiper-container {
-      width: 100vw;
+      width: 90vw;
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .slide-card {
     width: 100%;
     grid-template-columns: 1fr;
