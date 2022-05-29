@@ -47,34 +47,44 @@
                 crystal blue waters of the Pacific Ocean.
               </p>
               <div class="slide-content-features">
-                <img
-                  src="../assets/bed.png"
-                  alt="bed "
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="bedroom"
-                />
-                <img
-                  src="../assets/bath.png"
-                  alt="pool"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="bathroom"
-                />
-                <img
-                  src="../assets/beachfront.png"
-                  alt="beachfront"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="beachfront"
-                />
-                <img
-                  src="../assets/pool.png"
-                  alt="pool"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="pool"
-                />
+                <div>
+                  <img
+                    src="../assets/bed.png"
+                    alt="bed "
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="bedroom"
+                  />
+                  <span>{{ roomFeaturesData.bedrooms }}</span>
+                </div>
+                <div>
+                  <img
+                    src="../assets/bath.png"
+                    alt="pool"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="bathroom"
+                  />
+                  <span>{{ roomFeaturesData.bathrooms }}</span>
+                </div>
+                <div>
+                  <img
+                    src="../assets/beachfront.png"
+                    alt="beachfront"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="beachfront"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="../assets/pool.png"
+                    alt="pool"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="pool"
+                  />
+                </div>
               </div>
               <button>BOOK NOW</button>
             </div>
@@ -101,6 +111,10 @@ export default {
   },
   data() {
     return {
+      roomFeaturesData: {
+        bathrooms: Math.floor(Math.random() * (6 - 1 + 1) + 1),
+        bedrooms: Math.floor(Math.random() * (6 - 1 + 1) + 1),
+      },
       mainImageId: { img: "holiday1a.png", id: "0" },
       swiperOptions: {
         breakpoints: {
@@ -235,10 +249,19 @@ section {
     }
     .slide-content-features {
       display: flex;
-      justify-content: space-around;
-      img {
-        width: 20px;
+      justify-content: center;
+      align-items: center;
+      div {
+        display: flex;
+        align-items: center;
         margin-right: 10px;
+        img {
+          width: 20px;
+          margin-right: 5px;
+        }
+        span {
+          font-size: 14px;
+        }
       }
     }
     button {
