@@ -14,6 +14,7 @@
         :navigation="true"
         :modules="modules"
         class="mySwiper"
+        :breakpoints="swiperOptions.breakpoints"
       >
         <swiper-slide>
           <div class="slide-card">
@@ -81,6 +82,22 @@ export default {
   setup() {
     return {
       modules: [Keyboard, Pagination, Navigation],
+    };
+  },
+  data() {
+    return {
+      swiperOptions: {
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          900: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+        },
+      },
     };
   },
 };
