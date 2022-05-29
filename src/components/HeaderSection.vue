@@ -6,12 +6,23 @@
       <DropDownSelect
         :selectOptions="['Istanbul', 'Antalya', 'Konya']"
         @getLocation="setLocation($event)"
+        placeholder="Destination"
+        :class="[
+          v$.location.required.$invalid && showRequired
+            ? 'error-validation'
+            : '',
+        ]"
       ></DropDownSelect>
       <DropDownSelect
         :selectOptions="['2 BedRooms', '3 BedRooms', '5 BedRooms']"
         @getBedrooms="setBedrooms($event)"
+        placeholder="Bedroom size"
+        :class="[
+          v$.bedrooms.required.$invalid && showRequired
+            ? 'error-validation'
+            : '',
+        ]"
       ></DropDownSelect>
-
       <DatePicker @getDate="setDate($event, $event)"></DatePicker>
 
       <button @click="showFormData">
@@ -26,11 +37,17 @@
 // Header JS - Note: importing dropdown and datePicker as separate components
 import DropDownSelect from "./DropDownSelect.vue";
 import DatePicker from "./DatePicker.vue";
+import useVuelidate from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
+
 export default {
   name: "HeaderSection",
   components: {
     DropDownSelect,
     DatePicker,
+  },
+  setup() {
+    return { v$: useVuelidate() };
   },
   data() {
     return {
@@ -39,6 +56,23 @@ export default {
       startDate: "",
       endDate: "",
       formError: "",
+      showRequired: false,
+    };
+  },
+  validations() {
+    return {
+      location: {
+        required,
+      },
+      bedrooms: {
+        required,
+      },
+      startDate: {
+        required,
+      },
+      endDate: {
+        required,
+      },
     };
   },
   methods: {
@@ -53,6 +87,7 @@ export default {
       this.endDate = new Date(dates.endDate).toDateString();
     },
     showFormData() {
+      this.showRequired = true;
       if (this.location && this.bedrooms && this.startDate && this.endDate) {
         console.log({
           location: this.location,
@@ -143,7 +178,10 @@ header {
     }
   }
 }
-
+.error-validation {
+  border: 1px solid red;
+  border-radius: 5px;
+}
 @media screen and (max-width: 700px) {
   header {
     p {

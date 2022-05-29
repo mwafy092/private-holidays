@@ -11,7 +11,6 @@
         :pagination="{
           clickable: true,
         }"
-        :navigation="true"
         :modules="modules"
         class="mySwiper"
         :breakpoints="swiperOptions.breakpoints"
@@ -102,12 +101,17 @@ section {
   }
   .swiper-container {
     width: 70%;
+    .swiper {
+      width: 100%;
+      height: 100%;
+      padding: 40px 0;
+      position: relative;
+      swiper-pagination {
+        position: absolute;
+        top: 0;
+      }
+    }
   }
-}
-.swiper {
-  width: 100%;
-  height: 100%;
-  padding: 40px 0;
 }
 
 .swiper-slide {

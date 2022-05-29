@@ -1,6 +1,12 @@
 <template>
   <div>
-    <Multiselect v-model="value" :options="selectOptions" @click="passEvent" />
+    <Multiselect
+      v-model="value"
+      :options="selectOptions"
+      @click="passEvent"
+      :placeholder="placeholder"
+      :allow-empty="false"
+    />
   </div>
 </template>
 
@@ -14,11 +20,18 @@ export default {
   },
   props: {
     selectOptions: Array,
+    placeholder: String,
   },
   data() {
     return {
       value: null,
     };
+  },
+  watch: {
+    value: function (val) {
+      this.$emit("getLocation", val);
+      this.$emit("getBedrooms", val);
+    },
   },
   methods: {
     passEvent() {

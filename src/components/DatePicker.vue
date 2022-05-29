@@ -1,77 +1,40 @@
 <template>
-  <form class="bg-white shadow-md rounded" @submit.prevent>
-    <div>
-      <v-date-picker
-        v-model="range"
-        mode="dateTime"
-        :masks="masks"
-        is-range
-        @click="passEvent"
-      >
-        <template v-slot="{ inputValue, inputEvents, isDragging }">
-          <div
-            class="flex flex-col sm:flex-row justify-start items-center date-container"
-          >
-            <div class="relative flex-grow date-item">
-              <svg
-                class="text-gray-600 w-4 h-full mx-2 absolute pointer-events-none"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                ></path>
-              </svg>
-              <input
-                class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
-                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
-                :value="inputValue.start"
-                v-on="inputEvents.start"
-              />
-            </div>
-            <span class="flex-shrink-0">
-              <svg
-                class="w-4 h-4 stroke-current text-gray-600"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </span>
-            <div class="relative flex-grow date-item">
-              <svg
-                class="text-gray-600 w-4 h-full mx-2 absolute pointer-events-none"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                ></path>
-              </svg>
-              <input
-                class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
-                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
-                :value="inputValue.end"
-                v-on="inputEvents.end"
-              />
-            </div>
-          </div>
-        </template>
-      </v-date-picker>
-    </div>
-  </form>
+  <v-date-picker
+    class="inline-block h-full date-item"
+    v-model="startDate"
+    :max-date="endDate"
+  >
+    <template v-slot="{ inputValue, togglePopover }">
+      <div class="flex items-center">
+        <span @click="togglePopover()">
+          <img src="../assets/date.png" alt="dropdown" class="date-icon" />
+        </span>
+        <input
+          :value="inputValue"
+          class="bg-white text-gray-700 w-full py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+          readonly
+        />
+      </div>
+    </template>
+  </v-date-picker>
+  <v-date-picker
+    class="inline-block h-full date-item"
+    v-model="endDate"
+    :min-date="startDate"
+  >
+    <template v-slot="{ inputValue, togglePopover }">
+      <div class="flex items-center">
+        <span @click="togglePopover()">
+          <img src="../assets/date.png" alt="dropdown" class="date-icon" />
+        </span>
+        <input
+          :value="inputValue"
+          class="bg-white text-gray-700 w-full py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+          readonly
+        />
+      </div>
+    </template>
+  </v-date-picker>
 </template>
 
 <script>
@@ -79,14 +42,17 @@ export default {
   name: "DatePicker",
   data() {
     return {
-      range: {
-        start: new Date(2020, 0, 6),
-        end: new Date(2020, 0, 23),
-      },
-      masks: {
-        input: "YYYY-MM-DD h:mm A",
-      },
+      startDate: new Date().toDateString(),
+      endDate: new Date().toDateString(),
     };
+  },
+  watch: {
+    startDate: function (date) {
+      console.log(date);
+    },
+    endDate: function (date) {
+      console.log(date);
+    },
   },
   methods: {
     passEvent() {
@@ -100,29 +66,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.date-item {
+  margin-right: 20px;
+}
 .date-container {
   display: flex;
   align-items: center;
 }
-.date-item {
+.flex {
   display: flex;
-  svg {
-    width: 20px;
-  }
+  flex-direction: row-reverse;
+  border-radius: 5px;
   input {
-    width: 200px;
-    font-size: 13px;
-    padding: 5px 20px;
+    border-radius: 5px;
     height: 40px;
+    font-size: 16px;
+    width: 200px;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    margin-left: -25px;
+    z-index: 1;
+    background: none;
+    border: none;
   }
 }
-
+.date-icon {
+  width: 15px;
+}
 @media screen and (max-width: 1200px) {
+  .date-item {
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
   .date-container {
     flex-direction: column;
-    .date-item {
-      margin-left: -36px;
-    }
   }
 }
 </style>

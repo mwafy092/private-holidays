@@ -2,9 +2,11 @@
   <div class="main">
     <NavBar />
     <HeaderSection />
-    <LatestVacation />
-    <RecentHoliday />
-    <FeaturesSection />
+    <div class="container">
+      <LatestVacation />
+      <RecentHoliday />
+      <FeaturesSection />
+    </div>
     <ContactUs />
     <FooterSection />
   </div>
