@@ -56,6 +56,7 @@
 </template>
 
 <script>
+// contact us section js file - note: using vulidate to validate form
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength, maxLength } from "@vuelidate/validators";
 
@@ -117,6 +118,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// using scoped styles for contact us
 section {
   position: relative;
   width: 100vw;

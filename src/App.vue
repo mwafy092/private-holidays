@@ -11,6 +11,7 @@
 </template>
 
 <script>
+// Main Js File
 import NavBar from "./components/NavBar.vue";
 import HeaderSection from "./components/HeaderSection.vue";
 import FooterSection from "./components/FooterSection.vue";
@@ -34,6 +35,7 @@ export default {
 </script>
 
 <style>
+/* Main CSS For Main Container */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 .main {
   min-height: 100vh;

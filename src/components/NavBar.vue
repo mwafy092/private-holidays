@@ -1,7 +1,11 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"
+      <a
+        class="navbar-brand"
+        href="#"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
         ><img src="../assets/logo.svg" alt="logo" class="logo"
       /></a>
 
@@ -16,16 +20,40 @@
       <div class="collapse navbar-collapse navbar-items" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a
+              class="nav-link active"
+              href="#"
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+              >Home</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Experiences</a>
+            <a
+              class="nav-link active"
+              href="#"
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+              >Experiences</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Questions</a>
+            <a
+              class="nav-link active"
+              href="#"
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+              >Questions</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Contact</a>
+            <a
+              class="nav-link active"
+              href="#"
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+              >Contact</a
+            >
           </li>
         </ul>
       </div>
@@ -34,12 +62,14 @@
 </template>
 
 <script>
+// NavBar JS
 export default {
   name: "NavBar",
 };
 </script>
 
 <style lang="scss">
+// styles for nav
 nav {
   background: #fff;
   .logo {

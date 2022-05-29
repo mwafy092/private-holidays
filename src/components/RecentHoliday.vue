@@ -22,20 +22,28 @@
               <img
                 v-bind:src="`src/assets/` + 'holiday1a.png'"
                 v-if="index !== mainImageId.id"
+                alt="holiday image"
               />
-              <img v-bind:src="`src/assets/` + mainImageId.img" v-else />
+              <img
+                v-bind:src="`src/assets/` + mainImageId.img"
+                v-else
+                alt="holiday image"
+              />
               <div class="slide-images-thumps">
                 <img
                   src="../assets/holiday1a.png"
                   @click="(e) => setMainImageId(e, index)"
+                  alt="holiday image"
                 />
                 <img
                   src="../assets/holiday1b.png"
                   @click="(e) => setMainImageId(e, index)"
+                  alt="holiday image"
                 />
                 <img
                   src="../assets/holiday1c.png"
                   @click="(e) => setMainImageId(e, index)"
+                  alt="holiday image"
                 />
               </div>
             </div>
@@ -96,6 +104,7 @@
 </template>
 
 <script>
+// recent holidays js files - note: using swiper js
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
@@ -149,8 +158,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// scoped styles for recent holidays
 section {
-  //   height: 400px;
   padding: 20px;
   display: flex;
   justify-content: center;

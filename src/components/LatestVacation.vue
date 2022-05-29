@@ -17,23 +17,23 @@
         :breakpoints="swiperOptions.breakpoints"
       >
         <swiper-slide>
-          <img src="../assets/vacation1.png" alt="" />
+          <img src="../assets/vacation1.png" alt="holiday image" />
           <p class="slide-tag">Beachfront Escapes</p>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation2.png" alt="" />
+          <img src="../assets/vacation2.png" alt="holiday image" />
           <p class="slide-tag">Group Holidays</p>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation3.png" alt="" />
+          <img src="../assets/vacation3.png" alt="holiday image" />
           <p class="slide-tag">City Breaks</p>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation2.png" alt="" />
+          <img src="../assets/vacation2.png" alt="holiday image" />
           <p class="slide-tag">Group Holidays</p>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation3.png" alt="" />
+          <img src="../assets/vacation3.png" alt="holiday image" />
           <p class="slide-tag">City Breaks</p>
         </swiper-slide>
       </swiper>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+// latest vacation js - note: using swiper js for sliders
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
@@ -85,6 +86,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// scoped styles for latest vacation
 section {
   height: 400px;
   padding: 20px;

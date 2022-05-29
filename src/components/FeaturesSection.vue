@@ -66,6 +66,7 @@
 </template>
 
 <script>
+// features section js file - note: using swiper js for slider
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
@@ -104,6 +105,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// scoped styles for features section
 section {
   height: 400px;
   padding: 20px;

@@ -3,31 +3,65 @@
     <section class="footer-info">
       <div>
         <p>Information</p>
-        <a href="#" v-for="item in information" :key="item">{{ item }}</a>
+        <a
+          href="#"
+          v-for="item in information"
+          :key="item"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          >{{ item }}</a
+        >
       </div>
       <div>
         <p>Experiences</p>
-        <a href="#" v-for="item in experiences" :key="item">{{ item }}</a>
+        <a
+          href="#"
+          v-for="item in experiences"
+          :key="item"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          >{{ item }}</a
+        >
       </div>
       <div>
         <p>Themes</p>
-        <a href="#" v-for="item in information" :key="item">{{ item }}</a>
+        <a
+          href="#"
+          v-for="item in information"
+          :key="item"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          >{{ item }}</a
+        >
       </div>
       <div>
         <p>Popular destinations</p>
         <div class="popular-destinations-container">
-          <a href="#" v-for="item in popularDestinations" :key="item">{{
-            item
-          }}</a>
+          <a
+            href="#"
+            v-for="item in popularDestinations"
+            :key="item"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            >{{ item }}</a
+          >
         </div>
       </div>
     </section>
     <section class="footer-contact">
       <div>
-        <a href="tel:+91-80-41127931" class="phone-contact"
+        <a
+          href="tel:+91-80-41127931"
+          class="phone-contact"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
           >Phone: +91-80-41127931</a
         >
-        <a href="mailto: info@aztechdesign.co" class="email-contact"
+        <a
+          href="mailto: info@aztechdesign.co"
+          class="email-contact"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
           >Email: info@aztechdesign.co</a
         >
       </div>
@@ -43,6 +77,7 @@
 </template>
 
 <script>
+// footer js including state set data for footer
 export default {
   name: "FooterSection",
   data() {
@@ -91,6 +126,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// scoped styles from footer
 footer {
   background-color: #171d1c;
   display: grid;

@@ -23,6 +23,7 @@
 </template>
 
 <script>
+// Header JS - Note: importing dropdown and datePicker as separate components
 import DropDownSelect from "./DropDownSelect.vue";
 import DatePicker from "./DatePicker.vue";
 export default {
@@ -68,6 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// scoped styles for header
 header {
   width: 100%;
   position: relative;
