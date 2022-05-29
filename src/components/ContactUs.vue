@@ -187,4 +187,14 @@ section {
   margin: 0;
   padding: 0;
 }
+@media screen and (max-width: 990px) {
+  section {
+    form {
+      position: relative;
+      width: 100vw;
+      right: 0;
+      left: 0;
+    }
+  }
+}
 </style>
