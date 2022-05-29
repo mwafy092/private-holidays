@@ -14,6 +14,7 @@
         :navigation="true"
         :modules="modules"
         class="mySwiper"
+        :breakpoints="swiperOptions.breakpoints"
       >
         <swiper-slide v-for="(item, index) in 5" :key="index">
           <div class="slide-card">
@@ -115,6 +116,18 @@ export default {
   data() {
     return {
       mainImageId: { img: "holiday1a.png", id: "0" },
+      swiperOptions: {
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          1900: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+        },
+      },
     };
   },
   methods: {
@@ -251,6 +264,21 @@ section {
       border-radius: 40px;
       margin-top: 20px;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  section {
+    .swiper-container {
+      width: 100vw;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .slide-card {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
   }
 }
 </style>
