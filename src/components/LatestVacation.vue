@@ -144,4 +144,10 @@ section {
   bottom: 10px;
   width: 170px;
 }
+
+@media screen and (min-width: 1600px) {
+  section {
+    margin: 100px 0;
+  }
+}
 </style>
