@@ -11,7 +11,6 @@
         :pagination="{
           clickable: true,
         }"
-        :navigation="true"
         :modules="modules"
         class="mySwiper"
         :breakpoints="swiperOptions.breakpoints"
@@ -131,7 +130,7 @@ export default {
             slidesPerView: 1,
             spaceBetween: 10,
           },
-          1900: {
+          1200: {
             slidesPerView: 2,
             spaceBetween: 10,
           },
@@ -160,18 +159,17 @@ export default {
 <style lang="scss" scoped>
 // scoped styles for recent holidays
 section {
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 40px 0;
+  margin: 60px 0;
   h1 {
     font-size: 20px;
     font-weight: bold;
   }
   .swiper-container {
-    width: 70%;
+    width: 100%;
   }
 }
 .swiper {
@@ -218,7 +216,7 @@ section {
 }
 
 .slide-card {
-  width: 600px;
+  width: 500px;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;

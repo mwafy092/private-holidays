@@ -116,6 +116,7 @@ export default {
 header {
   width: 100%;
   position: relative;
+  margin-bottom: 50px;
   img {
     width: 100%;
   }
@@ -166,6 +167,7 @@ header {
 
 @media screen and (max-width: 1200px) {
   header {
+    margin-bottom: 0;
     p {
       top: 30%;
     }

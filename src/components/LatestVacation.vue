@@ -103,17 +103,15 @@ export default {
 <style lang="scss" scoped>
 // scoped styles for latest vacation
 section {
-  height: 400px;
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 40px 0;
+  margin: 60px 0;
+  padding: 20px;
   h1 {
     font-size: 20px;
     font-weight: bold;
-    margin-top: 50px;
   }
   .swiper-container {
     width: 100%;
@@ -183,6 +181,11 @@ section {
 @media screen and (min-width: 1600px) {
   section {
     margin: 100px 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  section {
+    margin: 60px 0;
   }
 }
 </style>

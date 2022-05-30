@@ -11,7 +11,6 @@
         :pagination="{
           clickable: true,
         }"
-        :navigation="true"
         :modules="modules"
         class="mySwiper"
         :breakpoints="swiperOptions.breakpoints"
@@ -107,19 +106,18 @@ export default {
 <style lang="scss" scoped>
 // scoped styles for features section
 section {
-  height: 400px;
-  padding: 20px;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 40px 0;
+  padding: 20px;
   h1 {
     font-size: 20px;
     font-weight: bold;
   }
   .swiper-container {
-    width: 70%;
+    width: 100%;
   }
 }
 .swiper {
