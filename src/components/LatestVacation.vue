@@ -17,23 +17,39 @@
       >
         <swiper-slide>
           <img src="../assets/vacation1.png" alt="holiday image" />
-          <p class="slide-tag">Beachfront Escapes</p>
+          <div class="slide-tag">
+            <p>Beachfront Escapes</p>
+          </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation2.png" alt="holiday image" />
-          <p class="slide-tag">Group Holidays</p>
+          <img src="../assets/vacation1.png" alt="holiday image" />
+          <div class="slide-tag">
+            <p>Group Holidays</p>
+          </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation3.png" alt="holiday image" />
-          <p class="slide-tag">City Breaks</p>
+          <img src="../assets/vacation1.png" alt="holiday image" />
+          <div class="slide-tag">
+            <p>City Breaks</p>
+          </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation2.png" alt="holiday image" />
-          <p class="slide-tag">Group Holidays</p>
+          <img src="../assets/vacation1.png" alt="holiday image" />
+          <div class="slide-tag">
+            <p>City Breaks</p>
+          </div>
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/vacation3.png" alt="holiday image" />
-          <p class="slide-tag">City Breaks</p>
+          <img src="../assets/vacation1.png" alt="holiday image" />
+          <div class="slide-tag">
+            <p>Beachfront Escapes</p>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/vacation1.png" alt="holiday image" />
+          <div class="slide-tag">
+            <p>Beachfront Escapes</p>
+          </div>
         </swiper-slide>
       </swiper>
     </div>
@@ -68,7 +84,7 @@ export default {
             slidesPerView: 1,
             spaceBetween: 10,
           },
-          600: {
+          700: {
             slidesPerView: 2,
             spaceBetween: 50,
           },
@@ -100,7 +116,7 @@ section {
     margin-top: 50px;
   }
   .swiper-container {
-    width: 70%;
+    width: 100%;
     .swiper {
       width: 100%;
       height: 100%;
@@ -143,12 +159,25 @@ section {
 
 .slide-tag {
   position: absolute;
-  font-size: 13px;
   background-color: #fff;
-  padding: 16px 0;
   margin: 0;
   bottom: 10px;
-  width: 170px;
+  width: 180px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 13px;
+    margin: 0;
+    border: 1px solid #ddd;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 1600px) {
