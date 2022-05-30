@@ -38,19 +38,5 @@ export default {
 
 <style>
 /* Main CSS For Main Container */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-.main {
-  min-height: 100vh;
-  width: 100%;
-  max-width: 1920px;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  margin: auto;
-  position: relative;
-  background-color: #eee;
-}
-.swiper-pagination {
-  position: absolute;
-  top: 0;
-}
+@import "./assets/styles/main.scss";
 </style>

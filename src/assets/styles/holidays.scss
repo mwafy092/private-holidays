@@ -1,0 +1,139 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px 0;
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .swiper-container {
+    width: 100%;
+  }
+}
+.swiper {
+  width: 100%;
+  height: fit-content;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slide-tag {
+  position: absolute;
+  font-size: 13px;
+  background-color: #fff;
+  padding: 16px 0;
+  margin: 0;
+  bottom: 10px;
+  width: 170px;
+}
+
+.slide-card {
+  width: 500px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  margin-bottom: 10px;
+  .slide-images {
+    display: grid;
+    img {
+      height: 100%;
+      object-fit: cover;
+      max-height: 200px;
+    }
+    .slide-images-thumps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+  }
+  .slide-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 13px;
+      text-align: left;
+    }
+    .slide-content-features {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        img {
+          width: 20px;
+          margin-right: 5px;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+    button {
+      border: none;
+      background-color: red;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  section {
+    .swiper-container {
+      width: 90vw;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .slide-card {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,83 @@
+footer {
+  background-color: #171d1c;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 40px 40px 10px;
+  height: fit-content;
+  bottom: 0;
+  width: 100vw;
+  .footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    div {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      p {
+        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+      }
+    }
+    .popular-destinations-container {
+      display: flex;
+      max-height: 200px;
+      a {
+        margin-right: 20px;
+      }
+    }
+  }
+  .footer-contact {
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0 40px 0 0;
+      p {
+        color: #fff;
+        font-size: 13px;
+      }
+      .phone-contact,
+      .email-contact {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+      }
+    }
+  }
+  .footer-contact-address {
+    margin-top: 40px;
+    h5 {
+      color: #fff;
+      font-size: 15px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    .footer-info {
+      flex-direction: column;
+      div {
+        margin-bottom: 10px;
+      }
+    }
+    .footer-contact {
+      text-align: right;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+}

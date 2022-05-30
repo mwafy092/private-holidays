@@ -1,0 +1,14 @@
+nav {
+  background: #fff;
+  .logo {
+    width: 220px;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+}
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

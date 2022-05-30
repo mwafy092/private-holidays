@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-light">
+  <nav class="navbar navbar-expand-sm navbar-light navbar-fixed-top">
     <div class="container-fluid">
       <a
         class="navbar-brand"
@@ -68,20 +68,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // styles for nav
-nav {
-  background: #fff;
-  .logo {
-    width: 220px;
-  }
-  .nav-link {
-    font-size: 14px;
-  }
-}
-.navbar-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
+@import "../assets/styles/navbar.scss";
 </style>

@@ -74,49 +74,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.date-item {
-  margin-right: 20px;
-}
-.date-container {
-  display: flex;
-  align-items: center;
-}
-.flex {
-  display: flex;
-  flex-direction: row-reverse;
-  border-radius: 5px;
-  input {
-    border-radius: 5px;
-    height: 40px;
-    font-size: 16px;
-    width: 200px;
-  }
-  span {
-    display: flex;
-    align-items: center;
-    border-radius: 0 5px 5px 0;
-    margin-left: -25px;
-    z-index: 1;
-    background: none;
-    border: none;
-  }
-}
-.date-icon {
-  width: 15px;
-}
-.error {
-  border: 1px solid red;
-  border-radius: 5px;
-  width: 202px;
-  display: flex;
-}
-@media screen and (max-width: 1200px) {
-  .date-item {
-    margin-bottom: 20px;
-    margin-right: 10px;
-  }
-  .date-container {
-    flex-direction: column;
-  }
-}
+// date picker styles
+@import "../assets/styles/datePicker.scss";
 </style>
