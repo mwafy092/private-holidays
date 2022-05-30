@@ -49,4 +49,8 @@ export default {
   position: relative;
   background-color: #eee;
 }
+.swiper-pagination {
+  position: absolute;
+  top: 0;
+}
 </style>
