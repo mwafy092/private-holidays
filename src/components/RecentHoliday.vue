@@ -3,6 +3,8 @@
     <h1>Recent holiday locations</h1>
     <div class="swiper-container">
       <swiper
+        :prevent-clicks="false"
+        :slide-to-clicked-slide="false"
         :slidesPerView="2"
         :spaceBetween="30"
         :keyboard="{
@@ -90,7 +92,7 @@
           </div>
         </swiper-slide>
       </swiper>
-      <button
+      <!-- <button
         type="button"
         class="btn btn-secondary me-2"
         data-bs-toggle="tooltip"
@@ -98,7 +100,7 @@
         title="Tooltip on left"
       >
         Tooltip on left
-      </button>
+      </button> -->
     </div>
   </section>
 </template>
