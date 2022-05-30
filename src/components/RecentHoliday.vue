@@ -54,43 +54,35 @@
                 crystal blue waters of the Pacific Ocean.
               </p>
               <div class="slide-content-features">
-                <div>
-                  <img
-                    src="../assets/bed.png"
-                    alt="bed "
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    title="bedroom"
-                  />
+                <div
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="bedroom"
+                >
+                  <img src="../assets/bed.png" alt="bed " />
                   <span>{{ roomFeaturesData.bedrooms }}</span>
                 </div>
-                <div>
-                  <img
-                    src="../assets/bath.png"
-                    alt="pool"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    title="bathroom"
-                  />
+                <div
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="bathroom"
+                >
+                  <img src="../assets/bath.png" alt="bathroom" />
                   <span>{{ roomFeaturesData.bathrooms }}</span>
                 </div>
-                <div>
-                  <img
-                    src="../assets/beachfront.png"
-                    alt="beachfront"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    title="beachfront"
-                  />
+                <div
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="beachfront"
+                >
+                  <img src="../assets/beachfront.png" alt="beachfront" />
                 </div>
-                <div>
-                  <img
-                    src="../assets/pool.png"
-                    alt="pool"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    title="pool"
-                  />
+                <div
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="pool"
+                >
+                  <img src="../assets/pool.png" alt="pool" />
                 </div>
               </div>
               <button>BOOK NOW</button>
@@ -98,6 +90,15 @@
           </div>
         </swiper-slide>
       </swiper>
+      <button
+        type="button"
+        class="btn btn-secondary me-2"
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        title="Tooltip on left"
+      >
+        Tooltip on left
+      </button>
     </div>
   </section>
 </template>
@@ -110,12 +111,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Keyboard, Pagination, Navigation } from "swiper";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
 
 export default {
   name: "RecentHoliday",
   components: {
     Swiper,
     SwiperSlide,
+  },
+  mounted() {
+    Array.from(
+      document.querySelectorAll('button[data-bs-toggle="tooltip"]')
+    ).forEach((tooltipNode) => new Tooltip(tooltipNode));
   },
   data() {
     return {
