@@ -66,7 +66,7 @@
               <div class="slide-content-features">
                 <div
                   data-bs-toggle="tooltip"
-                  data-bs-placement="top"
+                  data-bs-placement="right"
                   title="bedroom"
                 >
                   <img src="../assets/bed.png" alt="bed " />
@@ -74,7 +74,7 @@
                 </div>
                 <div
                   data-bs-toggle="tooltip"
-                  data-bs-placement="top"
+                  data-bs-placement="right"
                   title="bathroom"
                 >
                   <img src="../assets/bath.png" alt="bathroom" />
@@ -82,14 +82,14 @@
                 </div>
                 <div
                   data-bs-toggle="tooltip"
-                  data-bs-placement="top"
+                  data-bs-placement="right"
                   title="beachfront"
                 >
                   <img src="../assets/beachfront.png" alt="beachfront" />
                 </div>
                 <div
                   data-bs-toggle="tooltip"
-                  data-bs-placement="top"
+                  data-bs-placement="right"
                   title="pool"
                 >
                   <img src="../assets/pool.png" alt="pool" />
