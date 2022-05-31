@@ -3,8 +3,6 @@
     <h1>Recent holiday locations</h1>
     <div class="swiper-container">
       <swiper
-        :prevent-clicks="false"
-        :slide-to-clicked-slide="false"
         :slidesPerView="2"
         :spaceBetween="30"
         :grid="{
@@ -91,7 +89,7 @@
                   <img src="../assets/pool.png" alt="pool" />
                 </div>
               </div>
-              <button>BOOK NOW</button>
+              <button @click="testClick">BOOK NOW</button>
             </div>
           </div>
         </swiper-slide>
@@ -140,6 +138,7 @@ export default {
       },
       mainImageId: { img: "holiday1a.png", id: "0" },
       swiperOptions: {
+        preventClicks: false,
         breakpoints: {
           320: {
             slidesPerView: 1,
@@ -161,6 +160,9 @@ export default {
       );
       this.mainImageId.img = imageId;
       this.mainImageId.id = index;
+    },
+    testClick() {
+      console.log("hello");
     },
   },
   setup() {
