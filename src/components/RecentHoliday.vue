@@ -25,7 +25,11 @@
           <div class="slide-card">
             <div class="slide-images">
               <img
-                v-bind:src="`src/assets/` + 'holiday1a.png'"
+                v-bind:src="`src/assets/${
+                  sessionData[`${index}`]
+                    ? sessionData[`${index}`]
+                    : 'holiday1a.png'
+                }`"
                 v-if="index !== mainImageId.id"
                 alt="holiday image"
               />
@@ -129,6 +133,8 @@ export default {
         bathrooms: Math.floor(Math.random() * (6 - 1 + 1) + 1),
         bedrooms: Math.floor(Math.random() * (6 - 1 + 1) + 1),
       },
+      value: {},
+      sessionData: {},
       mainImageId: { img: "holiday1a.png", id: "0" },
       swiperOptions: {
         preventClicks: false,
@@ -145,6 +151,11 @@ export default {
       },
     };
   },
+  watch: {
+    value: function () {
+      this.sessionData = JSON.parse(sessionStorage.getItem("selectedImg"));
+    },
+  },
   methods: {
     setMainImageId(e, index) {
       let imageId = e.target.src.substring(
@@ -153,7 +164,8 @@ export default {
       );
       this.mainImageId.img = imageId;
       this.mainImageId.id = index;
-      console.log(this.mainImageId);
+      this.value = { ...this.value, [index]: imageId };
+      sessionStorage.setItem("selectedImg", JSON.stringify(this.value));
     },
     testClick() {
       console.log("Thanks for booking");
