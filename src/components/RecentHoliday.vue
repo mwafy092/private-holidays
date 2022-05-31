@@ -7,6 +7,10 @@
         :slide-to-clicked-slide="false"
         :slidesPerView="2"
         :spaceBetween="30"
+        :grid="{
+          rows: 2,
+          fill: 'row',
+        }"
         :keyboard="{
           enabled: true,
         }"
@@ -17,8 +21,8 @@
         class="mySwiper"
         :breakpoints="swiperOptions.breakpoints"
       >
-        <swiper-slide v-for="(item, index) in 5" :key="index">
-          <div class="slide-card" v-for="(card, index) in 2" :key="card">
+        <swiper-slide v-for="(item, index) in 6" :key="index">
+          <div class="slide-card">
             <div class="slide-images">
               <img
                 v-bind:src="`src/assets/` + 'holiday1a.png'"
@@ -111,8 +115,8 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Keyboard, Pagination, Navigation } from "swiper";
+import "swiper/css/grid";
+import { Keyboard, Pagination, Grid } from "swiper";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
@@ -161,7 +165,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Keyboard, Pagination, Navigation],
+      modules: [Keyboard, Pagination, Grid],
     };
   },
 };
