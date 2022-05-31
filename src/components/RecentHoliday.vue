@@ -3,6 +3,8 @@
     <h1>Recent holiday locations</h1>
     <div class="swiper-container">
       <swiper
+        :cssMode="true"
+        :mousewheel="true"
         :slidesPerView="2"
         :spaceBetween="30"
         :grid="{
@@ -19,7 +21,7 @@
         class="mySwiper"
         :breakpoints="swiperOptions.breakpoints"
       >
-        <swiper-slide v-for="(item, index) in 6" :key="index">
+        <swiper-slide v-for="(item, index) in 5" :key="index">
           <div class="slide-card">
             <div class="slide-images">
               <img
@@ -35,7 +37,7 @@
               <div class="slide-images-thumps">
                 <img
                   src="../assets/holiday1a.png"
-                  @click="(e) => setMainImageId(e, index)"
+                  @click.stop="(e) => setMainImageId(e, index)"
                   alt="holiday image"
                 />
                 <img
@@ -94,15 +96,6 @@
           </div>
         </swiper-slide>
       </swiper>
-      <!-- <button
-        type="button"
-        class="btn btn-secondary me-2"
-        data-bs-toggle="tooltip"
-        data-bs-placement="left"
-        title="Tooltip on left"
-      >
-        Tooltip on left
-      </button> -->
     </div>
   </section>
 </template>
@@ -114,7 +107,7 @@ import "swiper/css";
 
 import "swiper/css/pagination";
 import "swiper/css/grid";
-import { Keyboard, Pagination, Grid } from "swiper";
+import { Navigation, Pagination, Mousewheel, Keyboard, Grid } from "swiper";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
@@ -127,7 +120,7 @@ export default {
   },
   mounted() {
     Array.from(
-      document.querySelectorAll('button[data-bs-toggle="tooltip"]')
+      document.querySelectorAll('div[data-bs-toggle="tooltip"]')
     ).forEach((tooltipNode) => new Tooltip(tooltipNode));
   },
   data() {
@@ -160,14 +153,15 @@ export default {
       );
       this.mainImageId.img = imageId;
       this.mainImageId.id = index;
+      console.log(this.mainImageId);
     },
     testClick() {
-      console.log("hello");
+      console.log("Thanks for booking");
     },
   },
   setup() {
     return {
-      modules: [Keyboard, Pagination, Grid],
+      modules: [Navigation, Pagination, Mousewheel, Keyboard, Grid],
     };
   },
 };
