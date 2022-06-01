@@ -31,3 +31,16 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #333;
 }
+
+@media screen and (max-width: 1100px) {
+  .multiselect {
+    font-size: 14px !important;
+  }
+  .multiselect-options .multiselect-option {
+    font-size: 14px !important;
+  }
+  .multiselect-placeholder,
+  .multiselect-single-label {
+    padding-right: 0 !important;
+  }
+}

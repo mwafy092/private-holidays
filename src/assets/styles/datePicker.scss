@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: row-reverse;
   border-radius: 5px;
+  position: relative;
   input {
     border-radius: 5px;
     height: 40px;
@@ -19,7 +20,10 @@
     display: flex;
     align-items: center;
     border-radius: 0 5px 5px 0;
-    margin-left: -25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
     z-index: 1;
     background: none;
     border: none;
@@ -32,15 +36,17 @@
 .error {
   border: 1px solid red;
   border-radius: 5px;
-  width: 202px;
   display: flex;
 }
-@media screen and (max-width: 1200px) {
+
+@media screen and (max-width: 1100px) {
   .date-item {
-    margin-bottom: 20px;
     margin-right: 10px;
   }
-  .date-container {
-    flex-direction: column;
+  .flex {
+    input {
+      width: 160px;
+      font-size: 14px;
+    }
   }
 }
