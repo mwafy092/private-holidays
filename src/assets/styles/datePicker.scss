@@ -50,3 +50,15 @@
     }
   }
 }
+
+@media screen and (max-width: 750px) {
+  .date-item {
+    width: 80%;
+  }
+  .flex {
+    input {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}
