@@ -3,8 +3,6 @@
     <h1>Recent holiday locations</h1>
     <div class="swiper-container">
       <swiper
-        :cssMode="true"
-        :mousewheel="true"
         :slidesPerView="2"
         :spaceBetween="30"
         :grid="{
