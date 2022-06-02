@@ -12,8 +12,9 @@
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
+        data-toggle="collapse"
         data-bs-target="#collapsibleNavbar"
+        @click="toggleNavbar"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -63,8 +64,20 @@
 
 <script>
 // NavBar JS
+
 export default {
   name: "NavBar",
+  data() {
+    return {
+      showNav: false,
+    };
+  },
+  methods: {
+    toggleNavbar() {
+      const mobileNav = document.querySelector(".navbar-collapse");
+      mobileNav.classList.toggle("show");
+    },
+  },
 };
 </script>
 
