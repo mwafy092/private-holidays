@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>Why we are different</h1>
+    <h2>Why we are different</h2>
     <div class="swiper-container">
       <swiper
         :slidesPerView="3"

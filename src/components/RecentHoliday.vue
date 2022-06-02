@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>Recent holiday locations</h1>
+    <h2>Recent holiday locations</h2>
     <div class="swiper-container">
       <swiper
         :slidesPerView="2"
